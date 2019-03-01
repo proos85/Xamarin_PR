@@ -86,11 +86,16 @@
 
                 <Entry Placeholder="Gebruikersnaam"
                        PlaceholderColor="Gray"
+                       IsSpellCheckEnabled="False"
+                       IsTextPredictionEnabled="False"
+                       Keyboard="Text"
                        x:Name="UserName"/>
+
 
                 <Entry Placeholder="wachtwoord"
                        PlaceholderColor="Gray"
                        IsPassword="True"
+                       Keyboard="Numeric"
                        x:Name="UserPassword"/>
 
                 <Button Text="Login"

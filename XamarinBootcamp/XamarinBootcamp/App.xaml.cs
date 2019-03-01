@@ -12,7 +12,7 @@ namespace XamarinBootcamp
 
             MainPage = new NavigationPage(new MainPage())
             {
-                BarBackgroundColor = Color.FromRgb(51,51,51),
+                BarBackgroundColor = Color.FromRgb(0,153,0),
                 BarTextColor = Color.White
             };
         }

@@ -39,11 +39,15 @@ namespace XamarinBootcamp
 
         private async void Login_Clicked(object sender, EventArgs e)
         {
-            if ((UserName.Text?.Equals("KPN", StringComparison.InvariantCulture)).GetValueOrDefault() && 
-                (UserPassword.Text?.Equals("KPN", StringComparison.InvariantCulture)).GetValueOrDefault())
+            if (UserName.Text.Equals("KPN", StringComparison.InvariantCulture) &&
+                UserPassword.Text.Equals("12345", StringComparison.InvariantCulture))
             {
                 await DisplayAlert("Horay", "You're in", "OK");
                 await Navigation.PushAsync(new Pagina2(), true);
+            }
+            else
+            {
+                await DisplayAlert(":-(", "Helaas", "OK");
             }
         }
     }
