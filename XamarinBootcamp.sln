@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinBootcamp.Android", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinBootcamp.iOS", "XamarinBootcamp\XamarinBootcamp.iOS\XamarinBootcamp.iOS.csproj", "{68A47A6E-4EFA-4EAA-832B-F1CB78D2A113}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinBootcamp", "XamarinBootcamp\XamarinBootcamp\XamarinBootcamp.csproj", "{2AC8B374-1270-48E7-953E-D705DB546DDD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XamarinBootcamp", "XamarinBootcamp\XamarinBootcamp\XamarinBootcamp.csproj", "{2AC8B374-1270-48E7-953E-D705DB546DDD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

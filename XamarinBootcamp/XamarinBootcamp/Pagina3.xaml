@@ -6,9 +6,10 @@
              NavigationPage.HasNavigationBar="False">
 
     <Button HorizontalOptions="Center"
-                VerticalOptions="Center"
-                Clicked="Button_Clicked"
-                    Text="Terug naar hoofdpagina"/>
+            VerticalOptions="Center"
+            Clicked="Button_Clicked"
+            Text="Terug naar hoofdpagina"
+            Padding="10"/>
 
 
 </ContentPage>

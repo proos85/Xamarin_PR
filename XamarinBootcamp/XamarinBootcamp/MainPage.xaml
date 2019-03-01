@@ -1,35 +1,110 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:XamarinBootcamp"
+             xmlns:images="clr-namespace:XamarinBootcamp.Extensions.Images"
              x:Class="XamarinBootcamp.MainPage"
+             NavigationPage.HasNavigationBar="False"
              Title="Hoofdpagina">
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label" x:Key="CaptionLabel" BaseResourceKey="CaptionStyle"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <AbsoluteLayout CompressedLayout.IsHeadless="True">
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+        <Image AbsoluteLayout.LayoutFlags="PositionProportional" 
+               Source="{images:ImageResource Source=XamarinBootcamp.Images.kpn.jpg}"
+               Aspect="AspectFit"
+               WidthRequest="120"
+               HeightRequest="120"
+               x:Name="KpnLogo">
 
-        <Image Source="https://luciomsp.files.wordpress.com/2015/03/monkey.png"
-               Grid.ColumnSpan="3"
-               Aspect="AspectFit"/>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="OrientationStates">
+                    <VisualState x:Name="Portrait">
+                        <VisualState.Setters>
+                            <Setter Property="AbsoluteLayout.LayoutBounds" Value=".05,-.02"/>
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Landscape">
+                        <VisualState.Setters>
+                            <Setter Property="AbsoluteLayout.LayoutBounds" Value=".05,1.1"/>
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
 
-        <Button Grid.Row="2"
-                Grid.ColumnSpan="3"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                Clicked="Button_Clicked">
-            <Button.Text>Pagina 2</Button.Text>
-        </Button>
+        </Image>
 
-    </Grid>
+        <Frame AbsoluteLayout.LayoutFlags="PositionProportional"
+               BorderColor="Gray"
+               x:Name="MyFrame">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="OrientationStates">
+                    <VisualState x:Name="Portrait">
+                        <VisualState.Setters>
+                            <Setter Property="AbsoluteLayout.LayoutBounds" Value=".5,.45"/>
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Landscape">
+                        <VisualState.Setters>
+                            <Setter Property="AbsoluteLayout.LayoutBounds" Value=".5,.3"/>
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+
+            <StackLayout x:Name="AuthStackLayout">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="OrientationStates">
+                        <VisualState x:Name="Portrait">
+                            <VisualState.Setters>
+                                <Setter Property="WidthRequest" Value="250"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Landscape">
+                            <VisualState.Setters>
+                                <Setter Property="WidthRequest" Value="300"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+
+                <Label Text="Mijn Conferencing"
+                       Style="{StaticResource CaptionLabel}"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       FontSize="Large"
+                       FontAttributes="Bold"/>
+                
+                <BoxView HeightRequest="1"
+                         Color="Black"
+                         Margin="0,0,0,20"
+                         VerticalOptions="StartAndExpand"/>
+
+                <Entry Placeholder="Gebruikersnaam"
+                       PlaceholderColor="Gray"
+                       x:Name="UserName"/>
+
+                <Entry Placeholder="wachtwoord"
+                       PlaceholderColor="Gray"
+                       IsPassword="True"
+                       x:Name="UserPassword"/>
+
+                <Button Text="Login"
+                        HorizontalOptions="End"
+                        Margin="0,20,0,0"
+                        BackgroundColor="#007acc"
+                        TextColor="White"
+                        Clicked="Login_Clicked"/>
+
+            </StackLayout>
+
+        </Frame>
+
+    </AbsoluteLayout>
 
 
 </ContentPage>
