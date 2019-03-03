@@ -17,11 +17,14 @@ namespace XamarinBootcamp
 
             SizeChanged += Pagina3_SizeChanged;
             SetOrientationState();
+
+            MessagingCenter.Subscribe<string>(this, "Login", Login_Callback);
         }
 
         protected override void OnDisappearing()
         {
             SizeChanged -= Pagina3_SizeChanged;
+            MessagingCenter.Unsubscribe<LoginPage, bool>(this, "Login");
         }
 
         private void Pagina3_SizeChanged(object sender, EventArgs e)
@@ -38,10 +41,9 @@ namespace XamarinBootcamp
             VisualStateManager.GoToState(AuthStackLayout, $"AuthStackLayout{visualState}");
         }
 
-        private async void Login_Clicked(object sender, EventArgs e)
+        private async void Login_Callback(string loginStatus)
         {
-            if (UserName.Text.Equals("KPN", StringComparison.InvariantCulture) &&
-                UserPassword.Text.Equals("12345", StringComparison.InvariantCulture))
+            if (loginStatus.Equals("true"))
             {
                 await DisplayAlert("Horay", "You're in", "OK");
                 await Navigation.PushAsync(new Pagina2(), true);

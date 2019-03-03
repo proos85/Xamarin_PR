@@ -3,8 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:images="clr-namespace:XamarinBootcamp.Extensions.Images"
              xmlns:valueConverters="clr-namespace:XamarinBootcamp.ValueConverters"
+             xmlns:viewModels="clr-namespace:XamarinBootcamp.ViewModels"
              x:Class="XamarinBootcamp.LoginPage"
              NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.BindingContext>
+        <viewModels:LoginPageViewModel/>
+    </ContentPage.BindingContext>
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -99,12 +104,14 @@
                        IsSpellCheckEnabled="False"
                        IsTextPredictionEnabled="False"
                        Keyboard="Text"
+                       Text="{Binding LoginUserName, Mode=TwoWay}"
                        x:Name="UserName"/>
 
-                <Entry Placeholder="wachtwoord"
+                <Entry Placeholder="Wachtwoord"
                        PlaceholderColor="Gray"
                        IsPassword="True"
                        Keyboard="Numeric"
+                       Text="{Binding LoginPassword, Mode=TwoWay}"
                        x:Name="UserPassword"/>
 
                 <Button Text="Login"
@@ -112,8 +119,8 @@
                         Margin="0,20,0,0"
                         BackgroundColor="#007acc"
                         TextColor="White"
-                        Clicked="Login_Clicked"
-                        IsEnabled="False">
+                        IsEnabled="False"
+                        Command="{Binding LoginCommand}">
                     <Button.Triggers>
                         <MultiTrigger TargetType="Button">
                             <MultiTrigger.Conditions>
