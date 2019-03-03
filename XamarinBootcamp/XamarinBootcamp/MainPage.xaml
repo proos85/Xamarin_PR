@@ -33,13 +33,13 @@
                x:Name="KpnLogo">
 
             <VisualStateManager.VisualStateGroups>
-                <VisualStateGroup x:Name="OrientationStates">
-                    <VisualState x:Name="Portrait">
+                <VisualStateGroup x:Name="KpnLogoOrientationStates">
+                    <VisualState x:Name="KpnLogoPortrait">
                         <VisualState.Setters>
                             <Setter Property="AbsoluteLayout.LayoutBounds" Value=".05,-.02"/>
                         </VisualState.Setters>
                     </VisualState>
-                    <VisualState x:Name="Landscape">
+                    <VisualState x:Name="KpnLogoLandscape">
                         <VisualState.Setters>
                             <Setter Property="AbsoluteLayout.LayoutBounds" Value=".05,1.1"/>
                         </VisualState.Setters>
@@ -53,13 +53,13 @@
                BorderColor="Gray"
                x:Name="MyFrame">
             <VisualStateManager.VisualStateGroups>
-                <VisualStateGroup x:Name="OrientationStates">
-                    <VisualState x:Name="Portrait">
+                <VisualStateGroup x:Name="MyFrameOrientationStates">
+                    <VisualState x:Name="MyFramePortrait">
                         <VisualState.Setters>
                             <Setter Property="AbsoluteLayout.LayoutBounds" Value=".5,.45"/>
                         </VisualState.Setters>
                     </VisualState>
-                    <VisualState x:Name="Landscape">
+                    <VisualState x:Name="MyFrameLandscape">
                         <VisualState.Setters>
                             <Setter Property="AbsoluteLayout.LayoutBounds" Value=".5,.3"/>
                         </VisualState.Setters>
@@ -69,13 +69,13 @@
 
             <StackLayout x:Name="AuthStackLayout">
                 <VisualStateManager.VisualStateGroups>
-                    <VisualStateGroup x:Name="OrientationStates">
-                        <VisualState x:Name="Portrait">
+                    <VisualStateGroup x:Name="AuthStackLayoutOrientationStates">
+                        <VisualState x:Name="AuthStackLayoutPortrait">
                             <VisualState.Setters>
                                 <Setter Property="WidthRequest" Value="250"/>
                             </VisualState.Setters>
                         </VisualState>
-                        <VisualState x:Name="Landscape">
+                        <VisualState x:Name="AuthStackLayoutLandscape">
                             <VisualState.Setters>
                                 <Setter Property="WidthRequest" Value="300"/>
                             </VisualState.Setters>

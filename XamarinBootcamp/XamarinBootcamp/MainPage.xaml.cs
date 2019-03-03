@@ -32,9 +32,10 @@ namespace XamarinBootcamp
         private void SetOrientationState()
         {
             var visualState = Width > Height ? "Landscape" : "Portrait";
-            VisualStateManager.GoToState(KpnLogo, visualState);
-            VisualStateManager.GoToState(MyFrame, visualState);
-            VisualStateManager.GoToState(AuthStackLayout, visualState);
+
+            VisualStateManager.GoToState(KpnLogo, $"KpnLogo{visualState}");
+            VisualStateManager.GoToState(MyFrame, $"MyFrame{visualState}");
+            VisualStateManager.GoToState(AuthStackLayout, $"AuthStackLayout{visualState}");
         }
 
         private async void Login_Clicked(object sender, EventArgs e)
