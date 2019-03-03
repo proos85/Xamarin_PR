@@ -3,13 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:images="clr-namespace:XamarinBootcamp.Extensions.Images"
              xmlns:valueConverters="clr-namespace:XamarinBootcamp.ValueConverters"
-             x:Class="XamarinBootcamp.MainPage"
-             NavigationPage.HasNavigationBar="False"
-             Title="Hoofdpagina">
+             x:Class="XamarinBootcamp.LoginPage"
+             NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <valueConverters:LoginButtonMandatoryFieldsConverter x:Key="loginButtonMandatoryFieldsConverter"/>
+            <valueConverters:LoginButtonMandatoryFieldsConverter x:Key="LoginButtonMandatoryFieldsConverter"/>
 
             <Style TargetType="Label" x:Key="CaptionLabel" BaseResourceKey="CaptionStyle"/>
             <Style TargetType="Entry">
@@ -118,9 +117,9 @@
                     <Button.Triggers>
                         <MultiTrigger TargetType="Button">
                             <MultiTrigger.Conditions>
-                                <BindingCondition Binding="{Binding Source={x:Reference UserName}, Path=Text.Length, Converter={StaticResource loginButtonMandatoryFieldsConverter}}" 
+                                <BindingCondition Binding="{Binding Source={x:Reference UserName}, Path=Text.Length, Converter={StaticResource LoginButtonMandatoryFieldsConverter}}" 
                                                   Value="true"/>
-                                <BindingCondition Binding="{Binding Source={x:Reference UserPassword}, Path=Text.Length, Converter={StaticResource loginButtonMandatoryFieldsConverter}}" 
+                                <BindingCondition Binding="{Binding Source={x:Reference UserPassword}, Path=Text.Length, Converter={StaticResource LoginButtonMandatoryFieldsConverter}}" 
                                                   Value="true"/>
                             </MultiTrigger.Conditions>
                             <Setter Property="IsEnabled" Value="True"/>

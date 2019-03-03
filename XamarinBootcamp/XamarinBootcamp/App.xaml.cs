@@ -10,7 +10,7 @@ namespace XamarinBootcamp
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage())
+            MainPage = new NavigationPage(new LoginPage())
             {
                 BarBackgroundColor = Color.FromRgb(0,153,0),
                 BarTextColor = Color.White
