@@ -21,6 +21,8 @@ namespace XamarinBootcamp.ViewModels
 
                 OnPropertyChanged(nameof(LoginUserName));
                 _loginUserName = value;
+
+                ((Command)LoginCommand).ChangeCanExecute();
             }
         }
 
@@ -36,6 +38,8 @@ namespace XamarinBootcamp.ViewModels
 
                 OnPropertyChanged(nameof(LoginPassword));
                 _loginPassword = value;
+
+                ((Command)LoginCommand).ChangeCanExecute();
             }
         }
 
@@ -43,7 +47,13 @@ namespace XamarinBootcamp.ViewModels
 
         public LoginPageViewModel()
         {
-            LoginCommand = new Command(DoLogin);
+            LoginCommand = new Command(DoLogin, CanExecuteLoginCommand);
+        }
+
+        private bool CanExecuteLoginCommand()
+        {
+            var canExecute = !string.IsNullOrWhiteSpace(LoginUserName) && !string.IsNullOrWhiteSpace(LoginPassword);
+            return canExecute;
         }
 
         private void DoLogin()
@@ -51,7 +61,7 @@ namespace XamarinBootcamp.ViewModels
             bool loginStatus = LoginUserName.Equals("KPN", StringComparison.InvariantCulture) &&
                                LoginPassword.Equals("12345", StringComparison.InvariantCulture);
 
-            MessagingCenter.Send(this, "Login");
+            MessagingCenter.Send<object,bool>(this, "Login", loginStatus);
         }
     }
 }
