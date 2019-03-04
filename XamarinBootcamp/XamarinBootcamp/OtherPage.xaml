@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinBootcamp.OtherPage"
+             Title="Andere pagina">
+
+    <AbsoluteLayout CompressedLayout.IsHeadless="True">
+
+        <ActivityIndicator AbsoluteLayout.LayoutFlags="PositionProportional"
+                           AbsoluteLayout.LayoutBounds=".5,.5"
+                           WidthRequest="{OnPlatform Default=100, iOS=50}"
+                           HeightRequest="{OnPlatform Default=100, iOS=50}"
+                           Color="CornflowerBlue"
+                           IsRunning="True"/>
+
+        <ScrollView Padding="10"
+                    AbsoluteLayout.LayoutFlags="All"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <Label>
+                <Label.Text>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec posuere ultricies ligula, sed rhoncus nunc tincidunt feugiat. Nullam posuere magna dui, sed gravida leo mollis id. Nullam hendrerit sapien sem, nec gravida ante fringilla blandit. Sed non luctus urna. Phasellus consequat dictum sodales. Nunc et lacus finibus, tincidunt libero a, mollis elit. Nulla lacus nunc, sodales id consectetur at, faucibus vel nibh. Duis ultrices, augue non semper semper, ante eros ornare magna, at tristique ex arcu a mi. Nam sed arcu ac massa egestas fermentum vel rhoncus felis. Donec diam lorem, pretium eu lorem id, rhoncus tristique nulla.
+                                
+Quisque tincidunt laoreet vehicula. Curabitur mattis suscipit bibendum. Donec in semper velit, eu lobortis arcu. Vivamus imperdiet feugiat lacinia. Ut gravida venenatis ex, vitae scelerisque nunc vestibulum nec. Nulla sit amet imperdiet ex. Nulla facilisi. Quisque convallis, ante sit amet consequat vehicula, tellus nisl porta dolor, non bibendum velit mi a sem. Mauris rhoncus, ipsum vitae tristique varius, turpis lectus viverra urna, et semper massa ex vel enim. Fusce sodales molestie nibh, non finibus dui sollicitudin id. Sed blandit nisl lectus, a ullamcorper dui feugiat eget. Cras congue dictum lectus eu pellentesque. Integer commodo erat orci, quis varius metus suscipit non.
+
+Integer ut gravida mauris. Pellentesque commodo congue mauris varius eleifend. Sed finibus massa at lobortis accumsan. Pellentesque nec ullamcorper massa. Vestibulum vitae nisl vitae augue tempor lacinia. Quisque magna eros, varius in facilisis euismod, mollis ac dolor. Nullam eleifend viverra sem, id maximus mi. Donec a euismod massa, non efficitur purus. Proin vestibulum vitae urna at ullamcorper. Vivamus eu mauris non justo venenatis porttitor. Nunc quam ex, euismod vel porttitor ac, posuere eu lorem.
+
+Etiam feugiat porta quam vel congue. Maecenas sed urna ut metus porttitor aliquet. Duis interdum magna erat, eget lobortis neque mollis tristique. Nulla ut porttitor ex. Nulla fermentum viverra sem, vel bibendum arcu pellentesque at. Maecenas sagittis elementum nulla ac vehicula. Proin accumsan, turpis at cursus iaculis, ipsum leo convallis erat, et dictum turpis tellus ut lectus.
+
+Nulla vel ex id nulla varius lobortis at eget diam. Vestibulum quis sapien sollicitudin, facilisis sapien ac, lobortis sem. Morbi faucibus quis nibh non rutrum. Aliquam porttitor egestas elit eget varius. Suspendisse quam sapien, pretium at eros et, maximus mollis velit. Donec est ex, sollicitudin vel aliquam dictum, auctor sed libero. Proin lobortis leo in lacus lobortis, quis sodales sem faucibus. Etiam in rhoncus nulla, eu aliquet justo. Proin maximus condimentum dui, vel lacinia augue imperdiet nec. Ut imperdiet sit amet massa auctor lobortis. Vivamus scelerisque pellentesque est eget congue. Vestibulum ut lacinia nisi, vitae finibus lorem. Aenean tempus viverra lorem in pharetra.
+                </Label.Text>
+            </Label>
+        </ScrollView>
+
+    </AbsoluteLayout>
+
+    
+
+</ContentPage>

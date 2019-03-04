@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace XamarinBootcamp
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Pagina3 : ContentPage
+	public partial class OtherPage : ContentPage
 	{
-		public Pagina3 ()
+		public OtherPage ()
 		{
 			InitializeComponent ();
 		}

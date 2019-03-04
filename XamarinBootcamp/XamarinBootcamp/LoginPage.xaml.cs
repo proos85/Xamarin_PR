@@ -48,7 +48,8 @@ namespace XamarinBootcamp
             if (loginStatus)
             {
                 await DisplayAlert("Horay", "You're in", "OK");
-                await Navigation.PushAsync(new Pagina2(), true);
+                App.SetMainPage<MyTabbedPage>();
+
             }
             else
             {

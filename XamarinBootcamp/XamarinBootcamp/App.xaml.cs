@@ -10,11 +10,23 @@ namespace XamarinBootcamp
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new LoginPage())
+            SetMainPage<LoginPage>(true);
+        }
+
+        public static void SetMainPage<TPage>(bool isMainNavigationPage = false) where TPage: Page, new()
+        {
+            if (!isMainNavigationPage)
             {
-                BarBackgroundColor = Color.FromRgb(0,153,0),
-                BarTextColor = Color.White
-            };
+                Current.MainPage = new TPage();
+            }
+            else
+            {
+                Current.MainPage = new NavigationPage(new TPage())
+                {
+                    BarBackgroundColor = Color.FromRgb(0, 153, 0),
+                    BarTextColor = Color.White
+                };
+            }
         }
 
         protected override void OnStart()
