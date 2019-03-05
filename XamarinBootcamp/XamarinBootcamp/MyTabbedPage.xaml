@@ -8,9 +8,11 @@
              android:TabbedPage.BarItemColor="Black"
              android:TabbedPage.BarSelectedItemColor="Red"
              android:TabbedPage.IsSwipePagingEnabled="False"
-             NavigationPage.HasNavigationBar="False">
+             NavigationPage.HasNavigationBar="True"
+             Title="TappedPage">
 
     <pages:MainPage Title="Hoofd pagina"/>
     <pages:OtherPage Title="Andere pagina"/>
+    <pages:SuperHeroesPage Title="Super helden"/>
 
 </TabbedPage>

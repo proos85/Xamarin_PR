@@ -10,10 +10,10 @@ namespace XamarinBootcamp
         {
             InitializeComponent();
 
-            SetMainPage<LoginPage>(true);
+            SetMainPage<LoginPage>();
         }
 
-        public static void SetMainPage<TPage>(bool isMainNavigationPage = false) where TPage: Page, new()
+        public static void SetMainPage<TPage>(bool isMainNavigationPage = true) where TPage: Page, new()
         {
             if (!isMainNavigationPage)
             {

@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:XamarinBootcamp.ViewModels"
+             x:Class="XamarinBootcamp.SuperHeroesPage"
+             Title="Super helden"
+             Padding="20"
+             BackgroundColor="#EFEFEF">
+
+    <ContentPage.BindingContext>
+        <viewModels:SuperHeroesPageViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Info" Clicked="ShowInfo_Clicked"/>
+        <ToolbarItem Text="+" Clicked="AddSuperHeroToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <AbsoluteLayout>
+
+        <ListView AbsoluteLayout.LayoutFlags="All"
+                  AbsoluteLayout.LayoutBounds="0,0,1,1"
+                  ItemsSource="{Binding SuperHeroes}"
+                  HasUnevenRows="True"
+                  HorizontalScrollBarVisibility="Never"
+                  VerticalScrollBarVisibility="Never"
+                  SeparatorVisibility="None"
+                  SelectionMode="None"
+                  CachingStrategy="RecycleElement"
+                  IsPullToRefreshEnabled="False">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Margin="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="75"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="{Binding PreviewImage}"
+                                   Aspect="AspectFit"
+                                   VerticalOptions="Start"
+                                   HeightRequest="100"/>
+
+                            <StackLayout Grid.Column="1"
+                                         Padding="5">
+                                <Label FontSize="Large"
+                                       FontAttributes="Bold"
+                                       HorizontalTextAlignment="Start"
+                                       Margin="0,-10,0,0"
+                                       Text="{Binding Name}"/>
+
+                                <Label Text="{Binding Description}"/>
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <StackLayout x:Name="AddHeroLayer"
+                     AbsoluteLayout.LayoutFlags="All"
+                     AbsoluteLayout.LayoutBounds="0,0,1,1"
+                     BackgroundColor="Gray"
+                     Opacity="0.8"
+                     Padding="50"
+                     IsVisible="False">
+        </StackLayout>
+
+        <Frame x:Name="AddHeroPanel"
+               AbsoluteLayout.LayoutFlags="All"
+               AbsoluteLayout.LayoutBounds=".5,.4,.8,.7"
+               BackgroundColor="Black"
+               Padding="1"
+               IsVisible="False">
+
+            <ScrollView>
+                <StackLayout BackgroundColor="#EFEFEF"
+                             Padding="10"
+                             CompressedLayout.IsHeadless="True">
+
+                    <Entry Placeholder="Name"
+                           Text="{Binding AddHeroName, Mode=TwoWay}"/>
+
+                    <Entry Text="{Binding AddHeroImagePreview, Mode=TwoWay}"
+                           Placeholder="Preview"/>
+
+                    <Editor Placeholder="Description"
+                            Text="{Binding AddHeroDescription, Mode=TwoWay}"
+                            Keyboard="Text"
+                            IsSpellCheckEnabled="True"
+                            IsTextPredictionEnabled="True"
+                            VerticalOptions="FillAndExpand"/>
+
+                    <Button Text="Add Super hero"
+                            Command="{Binding AddHeroCommand}"/>
+
+                </StackLayout>
+            </ScrollView>
+        </Frame>
+    </AbsoluteLayout>
+</ContentPage>
