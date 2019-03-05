@@ -3,6 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinBootcamp.MainPageDetail">
 
+    <ContentPage.Resources>
+        <StyleSheet Source="/Styles/MainPageDetail.css"/>
+    </ContentPage.Resources>
+
     <AbsoluteLayout CompressedLayout.IsHeadless="True">
 
         <Entry AbsoluteLayout.LayoutFlags="All"
