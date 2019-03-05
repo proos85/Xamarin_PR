@@ -3,12 +3,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinBootcamp.MainPageDetail">
 
-    <StackLayout CompressedLayout.IsHeadless="True">
+    <AbsoluteLayout CompressedLayout.IsHeadless="True">
 
-        <Button Text="Detail"
+        <Entry AbsoluteLayout.LayoutFlags="All"
+               AbsoluteLayout.LayoutBounds=".5,.2,.8,.1"
+               x:Name="MyEntry" 
+               Placeholder="Vul hier wat in en het verschijnt hieronder"
+               PlaceholderColor="Gray"
+               IsSpellCheckEnabled="False"
+               IsTextPredictionEnabled="False" />
+
+        <Label AbsoluteLayout.LayoutFlags="All"
+               AbsoluteLayout.LayoutBounds=".5,.3,.8,.05"
+               HorizontalTextAlignment="Center"
+               Text="{Binding Source={x:Reference MyEntry}, Path=Text, Mode=TwoWay}"/>
+
+        <Button AbsoluteLayout.LayoutFlags="PositionProportional"
+                AbsoluteLayout.LayoutBounds=".5,.45"
+                Text="Detail"
                 Clicked="Button2_OnClicked"
                 HorizontalOptions="Center"
                 VerticalOptions="CenterAndExpand"/>
-    </StackLayout>
+
+    </AbsoluteLayout>
 
 </ContentPage>
