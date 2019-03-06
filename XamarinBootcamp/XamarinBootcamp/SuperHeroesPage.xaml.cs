@@ -1,4 +1,5 @@
 ﻿using System;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -35,7 +36,7 @@ namespace XamarinBootcamp
 
         private async void ShowInfo_Clicked(object sender, EventArgs e)
         {
-            await DisplayAlert("Superheroes URI", "https://comicvine.gamespot.com/profile/lvenger/lists/my-100-favourite-superheroes/17520/", "OK");
+            await Clipboard.SetTextAsync("https://comicvine.gamespot.com/profile/lvenger/lists/my-100-favourite-superheroes/17520/");
         }
     }
 }
