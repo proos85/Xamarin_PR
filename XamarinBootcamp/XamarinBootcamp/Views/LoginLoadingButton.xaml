@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviours="clr-namespace:XamarinBootcamp.Behaviours"
+             x:Class="XamarinBootcamp.Views.LoginLoadingButton">
+  
+    <AbsoluteLayout x:Name="LoginButtonContainer">
+        
+        <Button x:Name="LoginButton"
+                AbsoluteLayout.LayoutFlags="All"
+                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                BackgroundColor="Transparent"
+                Padding="10,0">
+            <Button.Behaviors>
+                <behaviours:ShowMessageWhenClickedButtonBehaviour/>
+            </Button.Behaviors>
+        </Button>
+
+        <ActivityIndicator x:Name="LoginLoadingActivityIndicator"
+                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                           AbsoluteLayout.LayoutBounds=".5,.5"
+                           Color="White" 
+                           IsRunning="False" 
+                           IsVisible="False"
+                           IsEnabled="False"
+                           WidthRequest="30"
+                           HorizontalOptions="CenterAndExpand"/>
+
+    </AbsoluteLayout>
+</ContentView>

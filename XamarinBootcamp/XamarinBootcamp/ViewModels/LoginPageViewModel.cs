@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -56,12 +57,15 @@ namespace XamarinBootcamp.ViewModels
             return canExecute;
         }
 
-        private void DoLogin()
+        private async void DoLogin()
         {
             bool loginStatus = LoginUserName.Equals("KPN", StringComparison.InvariantCulture) &&
                                LoginPassword.Equals("12345", StringComparison.InvariantCulture);
 
+            await Task.Delay(5000);
+
             MessagingCenter.Send<object,bool>(this, "Login", loginStatus);
+            MessagingCenter.Send<object>(this, "LoginCompleted");
         }
     }
 }
