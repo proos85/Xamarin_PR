@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using System.Linq;
+using Xamarin.Forms;
+using XamarinBootcamp.Services;
 
 namespace XamarinBootcamp.Behaviours
 {
@@ -19,8 +21,14 @@ namespace XamarinBootcamp.Behaviours
 
         private async void LoginButton_Clicked(object sender, System.EventArgs e)
         {
-            var page = (Page) _loginButton.Parent.Parent.Parent.Parent.Parent.Parent;
-            await page.DisplayAlert("", "I'm clicked", "OK");
+            var mainPage = (NavigationPage)Application.Current.MainPage;
+            var page = mainPage.Pages.ElementAt(0);
+            
+            var localMessage = DependencyService.Get<IDisplayService>().GetMessage();
+            await page.DisplayAlert("", localMessage, "OK");
+            
+            var platformMessage = DependencyService.Get<IDisplayServicePlatform>().GetMessage();
+            await page.DisplayAlert("", platformMessage, "OK");
         }
     }
 }

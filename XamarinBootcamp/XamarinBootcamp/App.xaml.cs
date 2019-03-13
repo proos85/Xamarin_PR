@@ -1,5 +1,6 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinBootcamp.Services;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace XamarinBootcamp
@@ -11,6 +12,14 @@ namespace XamarinBootcamp
             InitializeComponent();
 
             SetMainPage<LoginPage>();
+
+            RegisterServices();
+        }
+
+        private void RegisterServices()
+        {
+            DependencyService.Register<IDisplayService, DisplayService>();
+            DependencyService.Register<IDisplayServicePlatform>();
         }
 
         public static void SetMainPage<TPage>(bool isMainNavigationPage = true) where TPage: Page, new()

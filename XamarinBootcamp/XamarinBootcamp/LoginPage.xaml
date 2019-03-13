@@ -115,7 +115,6 @@
                        x:Name="UserPassword"/>
  
                 <views:LoginLoadingButton Margin="0,20,0,0"
-                                          HorizontalOptions="End"
                                           LoginButtonColor="#007acc"
                                           LoginButtonTextColor="White"
                                           LoginButtonText="Login"

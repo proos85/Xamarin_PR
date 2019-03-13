@@ -18,7 +18,7 @@
 
         <ActivityIndicator x:Name="LoginLoadingActivityIndicator"
                            AbsoluteLayout.LayoutFlags="PositionProportional"
-                           AbsoluteLayout.LayoutBounds=".5,.5"
+                           AbsoluteLayout.LayoutBounds=".8,.5"
                            Color="White" 
                            IsRunning="False" 
                            IsVisible="False"
